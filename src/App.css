@@ -1,38 +1,584 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+body {
+  font-family: "Montserrat", sans-serif !important;
+}
+
+/* Header styles */
+.headerMain {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  box-shadow: 0 2px 4px rgba(57, 63, 72, 0.3);
+  background-color: red;
+}
+
+.headerMain .dropdown-toggle {
+  color: white !important;
+  font-size: 1.1rem;
+  position: relative;
+  top: -0.5px;
+}
+
+.headerNavbarLogo {
+  flex: 3;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.logoSVG {
+  font-size: 2rem;
+  position: relative;
+  bottom: 3px;
+  margin-right: 4px;
+  color: rgb(255, 255, 255);
+}
+
+.logoText {
+  font-size: 1.5rem;
+  font-weight: 700;
+  position: relative;
+  top: 2px;
+  color: rgb(255, 255, 255);
+}
+
+.navLinks {
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.navLinks:hover {
+  color: rgb(255, 255, 255);
+}
+
+/* Home styles */
+
+.homePage {
+  padding: 2rem 4rem;
+}
+
+.homeFeatures {
+  padding: 1rem 2rem 1rem 2rem;
+  margin-bottom: 1rem;
+  box-shadow: rgb(0 0 0 / 12%) 0px 2px 2px 0px, rgb(0 0 0 / 12%) 0px 2px 4px 0px;
+}
+
+.featuresBody {
+  display: flex;
+  gap: 4rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.featuresBody .form-control {
+  border: 1px solid black;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.filterDiv {
   display: flex;
-  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-end;
+}
+
+.pizzazList {
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.pizzaImage {
+  height: 200px;
+  width: 200px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.pizzaName:hover {
+  color: red;
+  cursor: pointer;
+}
+
+.pizzaDetailsDiv {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
+  margin-bottom: 1rem;
+  padding: 0 1rem;
+}
+
+.pizzaDetailsDiv p {
+  margin: 0;
+}
+
+.pizzaDetailsDiv select {
+  text-transform: capitalize;
+}
+
+.pizzaBody {
+  box-shadow: rgb(0 0 0 / 12%) 0px 2px 2px 0px, rgb(0 0 0 / 12%) 0px 2px 4px 0px;
+  border-radius: 3px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.pizzaBody button {
+  width: 100%;
+}
+
+/* .addToCartButtonDiv {
+  text-align: right;
+}
+
+.pizzaImageDiv {
+  text-align: center;
+} */
+
+.uiBold {
+  font-weight: 700;
+}
+
+.pizzaPricePara {
+  font-size: 1.2rem;
+}
+
+.form-select {
+  text-align: center;
+  cursor: pointer;
+  font-weight: 700 !important;
+  border: 1px solid #000000 !important;
+}
+
+.pizzaButton {
+  background-color: red !important;
+  border-color: red !important;
+}
+
+.pizzaButton:hover {
+  background-color: #e31837 !important;
+  border-color: #e31837 !important;
+}
+
+.pizzaButtonOutline:hover {
+  background-color: red !important;
+  border-color: red !important;
+}
+
+.modalPizzaImageDiv {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.modalPizzaImage {
+  max-width: 460px;
+  max-height: 400px;
+}
+
+.centeringDiv {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
 }
 
-.App-link {
-  color: #61dafb;
+.spinnerCenter {
+  display: flex;
+  justify-content: center;
+  padding-top: 5rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Cart styles */
+
+.cartWrapper {
+  padding: 2rem;
+}
+
+.cartBody {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
+
+.centerAlign {
+  text-align: center;
+}
+
+.cartBody h2 {
+  padding-bottom: 1rem;
+}
+
+.cartLeft h2 {
+  border-bottom: 1px solid hsl(210deg 8% 90%);
+}
+
+.cartItemBody {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  padding: 1rem;
+  border-bottom: 1px solid hsl(210deg 8% 90%);
+}
+
+.pizzaNameAndSize {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.pizzaNameAndSize select {
+  max-width: 8rem;
+}
+
+.pizzaNameAndSize h5 {
+  margin-bottom: 4px;
+}
+
+.cartItemPricePara {
+  font-size: 1.1rem;
+}
+
+.cartItemQuantityPara {
+  font-size: 1.1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.quantityChangerSpan {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.plusIcon {
+  color: green;
+  cursor: pointer;
+}
+
+.minusIcon {
+  color: red;
+  cursor: pointer;
+}
+
+.cartItemImage {
+  width: 100px;
+  height: 100px;
+}
+
+.cartItemImageAndDelete {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.deleteIcon {
+  font-size: 2rem;
+  position: relative;
+  top: -5px;
+  color: red;
+  cursor: pointer;
+}
+
+.deleteIcon:hover {
+  color: crimson;
+}
+
+/* Login styles */
+
+.login {
+  padding: 4rem 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.loginBody {
+  width: 360px;
+}
+
+.loginBodyTop {
+  padding: 2rem;
+  margin-bottom: 1rem;
+  box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%),
+    0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+}
+
+.loginBodyTop button {
+  width: 100%;
+}
+
+.loginBodyTop .skyBlueButton {
+  margin-bottom: 1rem;
+}
+
+.loginLogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+}
+
+.loginLogo .logoStack .logoOverflow {
+  position: relative;
+  bottom: 4px;
+}
+
+.loginBodyBottom {
+  padding: 1rem 2rem;
+  box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%),
+    0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+}
+
+.loginBodyBottom p {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.skyBlueButtonOutline {
+  color: hsl(206deg 100% 52%) !important;
+  border-color: hsl(206deg 100% 52%) !important;
+}
+
+.skyBlueButtonOutline:hover {
+  color: white !important;
+  background-color: hsl(206deg 100% 52%) !important;
+}
+
+.redErrors {
+  color: crimson;
+}
+
+.logoSVGRed {
+  color: red;
+  position: relative;
+  top: -3px;
+  margin-right: 5px;
+}
+
+.actionText {
+  color: red;
+  text-transform: uppercase;
+}
+
+/* register styles */
+
+.register {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.alertCenterDiv {
+  text-align: center;
+}
+
+.navbar-nav {
+  align-items: center;
+}
+
+.payoutBtnDiv {
+  display: flex;
+  justify-content: right;
+  padding: 0.1rem 2rem;
+}
+
+.payoutBtnDiv button {
+  width: 100%;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.ordersWrapper {
+  padding: 2rem 6rem;
+}
+
+.titleH2 {
+  padding-bottom: 1rem;
+  border-bottom: 2px solid hsl(210deg 8% 90%);
+  margin: 0;
+}
+
+.ordersList {
+  padding: 2rem;
+}
+
+.orderBody {
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid rgb(48, 4, 4);
+  border-radius: 3px;
+}
+
+.latestOrder {
+  background-color: #7fffd442;
+}
+
+.orderTitle {
+  text-align: center;
+}
+
+.cardCreds {
+  padding: 2rem;
+  color: rgb(141, 141, 141);
+}
+
+.adminWrapper {
+  padding: 2rem 6rem;
+}
+
+.adminNav {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  list-style: none;
+  text-transform: uppercase;
+  padding: 1rem;
+  background-color: whitesmoke;
+}
+
+.adminNav a {
+  text-decoration: none;
+  color: #00000091;
+  font-weight: 500;
+}
+
+.adminSubContainer {
+  padding: 0 2rem;
+}
+
+.titleAdminNav {
+  text-align: center;
+}
+
+.adminTables {
+  text-align: center;
+  align-items: center;
+}
+
+.adminTables td {
+  vertical-align: middle;
+  padding: 1rem 0;
+}
+
+.pizzaListActions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.deletePizzaListIcon {
+  color: red;
+}
+
+.updatePizzaListIcon {
+  color: rgb(51, 156, 255);
+}
+
+.deletePizzaListIcon:hover {
+  color: rgb(165, 5, 5);
+  cursor: pointer;
+}
+
+.updatePizzaListIcon:hover {
+  color: blue;
+  cursor: pointer;
+}
+
+.adminFormBody .form-select {
+  text-align: inherit;
+  cursor: pointer;
+  font-weight: 400 !important;
+  border: 1px solid #ced4da !important;
+}
+
+.adminFormBody button {
+  margin-top: 1rem;
+}
+
+.orderStatusSpan {
+  color: green;
+  font-weight: 500;
+}
+
+.userListActions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (max-width: 992px) {
+  .homePage {
+    padding: 2rem 0;
   }
-  to {
-    transform: rotate(360deg);
+  .pizzazList {
+    grid-template-columns: 1fr 1fr;
+  }
+  .cartBody {
+    grid-template-columns: 1fr;
+  }
+  .cartItemBody {
+    gap: 3rem;
+  }
+  .ordersWrapper {
+    padding: 2rem 0;
+  }
+  .adminWrapper {
+    padding: 2rem 0;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .pizzazList {
+    grid-template-columns: 1fr;
+  }
+  .featuresBody {
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  .pizzaNameAndSize {
+    flex-wrap: wrap;
+  }
+  .orderBody {
+    grid-template-columns: 1fr;
+    text-align: center;
+    word-break: break-all;
+  }
+}
+@media only screen and (max-width: 596px) {
+  .login {
+    padding: 2rem 0;
+  }
+  .register {
+    padding: 2rem 0;
+  }
+  .cartWrapper {
+    padding: 2rem 0;
+  }
+  .cartItemBody {
+    grid-template-columns: 1fr;
+  }
+  .ordersList {
+    padding: 2rem 0;
+  }
+  .adminNav {
+    flex-wrap: wrap;
   }
 }
