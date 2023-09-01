@@ -15,7 +15,7 @@ import Orders from './pages/Orders';
 import PrivateRoute from './components/PrivateRoute';
 import Admin from './pages/Admin';
 
-axios.defaults.baseURL = "https://pizzaz-api.herokuapp.com";
+axios.defaults.baseURL = "https://pizzaz-api.onrender.com";
 
 
 function App() {
